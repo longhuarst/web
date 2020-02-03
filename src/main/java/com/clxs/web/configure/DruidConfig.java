@@ -42,8 +42,12 @@ public class DruidConfig {
         filterRegistrationBean.addUrlPatterns("/*");
 
         //添加需要忽略的格式信息
-        filterRegistrationBean.addUrlPatterns("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        filterRegistrationBean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
 
         return filterRegistrationBean;
     }
+
+
+
+
 }

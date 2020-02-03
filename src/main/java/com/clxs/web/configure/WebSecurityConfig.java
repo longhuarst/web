@@ -25,11 +25,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         System.out.println("configure .......");
 
-        http.authorizeRequests().antMatchers("/").permitAll()
-                .antMatchers("/user/**").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/").permitAll();
+//                .antMatchers("/user/**").hasAnyRole("USER");
 
 
         http.formLogin();//开启登陆页面
+
+        http.csrf().ignoringAntMatchers("/druid/*");//忽略druid的请求
 
         http.logout().logoutSuccessUrl("/");//开启logout方法
     }
