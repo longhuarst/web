@@ -22,4 +22,18 @@ public interface UserRepository extends JpaRepository<User,String> {
     //相当于 select u from user u where id in(?,?,?)
     List<User> findByIdIn(Collection<String> ids);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
