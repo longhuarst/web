@@ -55,18 +55,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
 
-        List<User> userList = redisTemplate.opsForList().range(ALL_USER, 0, -1);
-
-        if (userList != null && userList.size() > 0){
-            return userList;
-        }
-
-        userList = userRepository.findAll();
-
-        if (userList != null && userList.size() > 0){
-            redisTemplate.delete(ALL_USER);
-            redisTemplate.opsForList().leftPushAll(ALL_USER, userList);
-        }
+//        List<User> userList = redisTemplate.opsForList().range(ALL_USER, 0, -1);
+//
+//        if (userList != null && userList.size() > 0){
+//            return userList;
+//        }
+//
+//        userList = userRepository.findAll();
+//
+//        if (userList != null && userList.size() > 0){
+//            redisTemplate.delete(ALL_USER);
+//            redisTemplate.opsForList().leftPushAll(ALL_USER, userList);
+//        }
 
 
         return userRepository.findAll();

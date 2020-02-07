@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration status="WARN">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--指定日志的输出格式-->
+            <PatternLayout patten="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+        </Console>
+    </appenders>
+    <loggers>
+        <root level="all">
+            <!--控制台输出-->
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>
