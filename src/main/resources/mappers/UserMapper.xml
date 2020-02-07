@@ -18,4 +18,11 @@
         </where>
     </select>
 
+    <select id="findByUsername" resultMap="UserResultMap" parameterType="String">
+        select * from user u
+        <where>
+            u.username = #{username}
+        </where>
+    </select>
+
 </mapper>

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.Future;
 
 public interface UserService {
 
@@ -23,8 +24,15 @@ public interface UserService {
 
 
     //自定义
-    List<User> findByUsername(String username);
+    User findByUsername(String username);
     List<User> findByUsernameLike(String username);
     List<User> findByIdIn(Collection<String> ids);
+
+
+    //异步
+   Future<List<User>> asyncFindAll();
+
+   //重试
+    User findByUsernameRetry(String username);
 
 }

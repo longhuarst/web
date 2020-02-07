@@ -17,5 +17,10 @@ public class UserDaoImpl implements UserDao {
         return userDao.findByUsernameAndPassword(username, password);
     }
 
+    @Override
+    public User findByUsername(String username) {
+        return userDao.findByUsername(username);
+    }
+
 
 }
