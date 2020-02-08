@@ -68,8 +68,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
-
     @Bean
     public UserDetailsService userDetailsService(){
         UserDetails user = User.withDefaultPasswordEncoder()
